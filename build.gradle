@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceCompatibility = 1.7     // 1.8 // 1.7
+targetCompatibility = 1.7     // 1.8 // 1.7
+
+ext.asmVer    = '5.0.4'
+
+configurations.all {
+    resolutionStrategy {
+        failOnVersionConflict()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.google.guava:guava:19.0"
+    compile "org.ow2.asm:asm:$asmVer"
+    compile "org.ow2.asm:asm-analysis:$asmVer"
+    compile "org.ow2.asm:asm-commons:$asmVer"
+    compile "org.ow2.asm:asm-util:$asmVer"
+}
+
+applicationDefaultJvmArgs = []
+
+mainClassName = "ASMTest"
+
+defaultTasks 'run'
