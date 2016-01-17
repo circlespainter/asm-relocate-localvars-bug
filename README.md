@@ -2,7 +2,7 @@
 
 When using [ASM](http://asm.ow2.org/)'s `RemappingClassAdapter`, even with an empty remapping, a method's locals can be relocated so that (seemingly) the first appearing in the bytecode sequence will get lower slots.
 
-This is a serious issue for transforming logic that relies on local slot stability.
+This is an issue for transforming logic that relies on local slot stability.
 
 This issue is inherited f.e. by the [Gradle Shadow plugin](https://github.com/johnrengelman/shadow).
 
