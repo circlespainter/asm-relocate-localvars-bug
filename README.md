@@ -6,6 +6,9 @@ This is an issue for transforming logic that relies on local slot stability.
 
 This issue is inherited f.e. by the [Gradle Shadow plugin](https://github.com/johnrengelman/shadow).
 
+* ASM issue: http://forge.ow2.org/tracker/?func=detail&aid=317603&group_id=23&atid=100023
+* Gradle Shadow Plugin issue: https://github.com/johnrengelman/shadow/issues/176
+
 ## Reproducing
 
 This is the locals section of the `public V get()` method obtained through `javap -v src/main/resources/Val.class` (the class is produced by a [Quasar](https://github.com/puniverse/quasar/tree/v0.7.3) build.)
